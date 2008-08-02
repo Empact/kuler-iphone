@@ -1,0 +1,82 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* kuler-iphone */ = {
+		activeExec = 0;
+		executables = (
+			8834CAF80E4501BA0073BBDF /* kuler-iphone */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 8834CAF80E4501BA0073BBDF /* kuler-iphone */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* kuler-iphone */;
+		codeSenseManager = 8834CB050E4501BF0073BBDF /* Code sense */;
+		executables = (
+			8834CAF80E4501BA0073BBDF /* kuler-iphone */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 239403450;
+			PBXWorkspaceStateSaveDate = 239403450;
+		};
+		sourceControlManager = 8834CB040E4501BF0073BBDF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8834CAF80E4501BA0073BBDF /* kuler-iphone */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "kuler-iphone";
+		sourceDirectories = (
+		);
+	};
+	8834CB040E4501BF0073BBDF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	8834CB050E4501BF0073BBDF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

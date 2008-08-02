@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -310,7 +308,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MyNewFile14.java</string>
+								<string>kuler_iphoneAppDelegate.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -318,7 +316,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MyNewFile14.java</string>
+										<string>kuler_iphoneAppDelegate.h</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>8834CB1C0E4507E60073BBDF</string>
+										<key>history</key>
+										<array>
+											<string>8834CB160E4507E60073BBDF</string>
+											<string>8834CB170E4507E60073BBDF</string>
+											<string>8834CB180E4507E60073BBDF</string>
+										</array>
+										<key>prevStack</key>
+										<array>
+											<string>8834CB190E4507E60073BBDF</string>
+											<string>8834CB1A0E4507E60073BBDF</string>
+											<string>8834CB1B0E4507E60073BBDF</string>
+										</array>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>
@@ -339,6 +353,8 @@
 							<string>285pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -375,9 +391,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>8834CB010E4501BF0073BBDF</string>
+				<string>8834CB1D0E4507E60073BBDF</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>8834CB020E4501BF0073BBDF</string>
+				<string>8834CB1E0E4507E60073BBDF</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -511,7 +527,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/jesse/development/projects/kuler-iphone/kuler-iphone/kuler-iphone.xcodeproj</string>
+		<string>/Users/jesse/development/projects/kuler-iphone/kuler-iphone.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>52 524 788 504 0 0 1680 1028 </string>

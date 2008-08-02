@@ -1,2 +1,3 @@
 build/*
 kuler-iphone.xcodeproj/*
+.DS_Store

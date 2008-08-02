@@ -14,6 +14,7 @@
 @synthesize swatches = _swatches;
 @synthesize author = _author;
 @synthesize title = _title;
+@synthesize link = _link;
 @synthesize downloadCount = _downloadCount;
 @synthesize created = _created;
 @synthesize edited = _edited;

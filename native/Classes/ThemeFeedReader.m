@@ -98,7 +98,7 @@ static NSUInteger parsedItemsCounter;
         [parser abortParsing];
     }
 
-    if ([elementName isEqualToString:@"kuler:themeItem"]) {
+    if ([elementName isEqualToString:@"item"]) {
 
         parsedItemsCounter++;
 

@@ -15,6 +15,8 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		7377ABB00E4531E200AAF824 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABAD0E4531E200AAF824 /* Theme.m */; };
 		7377ABB10E4531E200AAF824 /* ThemeFeedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABAF0E4531E200AAF824 /* ThemeFeedReader.m */; };
+		7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */; };
+		7377AC810E454CA600AAF824 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7377AC800E454CA600AAF824 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		7377ABAD0E4531E200AAF824 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 		7377ABAE0E4531E200AAF824 /* ThemeFeedReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeFeedReader.h; sourceTree = "<group>"; };
 		7377ABAF0E4531E200AAF824 /* ThemeFeedReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeFeedReader.m; sourceTree = "<group>"; };
+		7377ABE20E453C3B00AAF824 /* KulerGetFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KulerGetFeed.h; sourceTree = "<group>"; };
+		7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KulerGetFeed.m; sourceTree = "<group>"; };
+		7377AC800E454CA600AAF824 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +47,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */,
+				7377AC810E454CA600AAF824 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,8 @@
 			children = (
 				7377ABAC0E4531E200AAF824 /* Theme.h */,
 				7377ABAD0E4531E200AAF824 /* Theme.m */,
+				7377ABE20E453C3B00AAF824 /* KulerGetFeed.h */,
+				7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */,
 				7377ABAE0E4531E200AAF824 /* ThemeFeedReader.h */,
 				7377ABAF0E4531E200AAF824 /* ThemeFeedReader.m */,
 				1D3623240D0F684500981E51 /* kuler_iphoneAppDelegate.h */,
@@ -102,6 +110,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7377AC800E454CA600AAF824 /* SystemConfiguration.framework */,
 				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -166,6 +175,7 @@
 				1D3623260D0F684500981E51 /* kuler_iphoneAppDelegate.m in Sources */,
 				7377ABB00E4531E200AAF824 /* Theme.m in Sources */,
 				7377ABB10E4531E200AAF824 /* ThemeFeedReader.m in Sources */,
+				7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

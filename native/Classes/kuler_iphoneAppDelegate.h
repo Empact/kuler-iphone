@@ -10,6 +10,7 @@
 
 @interface kuler_iphoneAppDelegate : NSObject <UIApplicationDelegate> {
 	IBOutlet UIWindow *window;
+    BOOL _isDataSourceAvailable;
 }
 
 @property (nonatomic, retain) UIWindow *window;

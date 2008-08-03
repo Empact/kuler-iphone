@@ -10,6 +10,7 @@
 
 
 @implementation Theme
+
 @synthesize themeID = _themeID;
 @synthesize swatches = _swatches;
 @synthesize author = _author;

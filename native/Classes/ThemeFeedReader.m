@@ -135,15 +135,30 @@ static NSUInteger parsedItemsCounter;
     if (qName) {
         elementName = qName;
     }
-    
-    if ([elementName isEqualToString:@"title"]) {
+	
+    if ([elementName isEqualToString:@"kuller:themeTitle"]) {
         self.currentObject.title = self.contentOfCurrentProperty;
-        
-    } else if ([elementName isEqualToString:@"updated"]) {
-        //self.currentObject.eventDateString = self.contentOfCurrentProperty;
-        
-    } else if ([elementName isEqualToString:@"georss:point"]) {
-        //self.currentObject.geoRSSPoint = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:themeID"]) {
+        self.currentObject.themeID = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:authorID"]) {
+        self.currentObject.authorId = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:authorLabel"]) {
+        self.currentObject.authorLabel = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:themeDownloadCount"]) {
+        self.currentObject.downloadCount = [self.contentOfCurrentProperty integerValue];
+	
+    } else if ([elementName isEqualToString:@"kuller:authorLabel"]) {
+        self.currentObject.authorLabel = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:themeEditedAt"]) {
+        self.currentObject.edited = self.contentOfCurrentProperty;
+		
+    } else if ([elementName isEqualToString:@"kuller:themeCreatedAt"]) {
+        self.currentObject.created = self.contentOfCurrentProperty;
     }
 }
 

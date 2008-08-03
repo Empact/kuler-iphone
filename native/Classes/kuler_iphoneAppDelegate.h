@@ -27,4 +27,3 @@
 - (void)getList:(id *)objsPtr range:(NSRange)range;
 
 @end
-

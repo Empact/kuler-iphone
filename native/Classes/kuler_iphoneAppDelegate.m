@@ -51,6 +51,9 @@ static NSString *feedURLString = @"http://kuler.adobe.com/kuler/API/rss/get.cfm?
     
     ThemeFeedReader *streamingParser = [[ThemeFeedReader alloc] init];
     [streamingParser parseXMLFileAtURL:[NSURL URLWithString:feedURLString] parseError:&parseError];
+	// TODO: I am going to change from using the SAX style parseXMLFileAt to a DOM oriented method like xmlDoc = [[NSXMLDocument alloc] initWithContentsOfURL:furl...
+	// see: http://developer.apple.com/documentation/Cocoa/Conceptual/NSXML_Concepts/Articles/CreatingXMLDoc.html#//apple_ref/doc/uid/TP40001255
+	
     [streamingParser release];        
     [pool release];
     
@@ -91,8 +94,7 @@ static NSString *feedURLString = @"http://kuler.adobe.com/kuler/API/rss/get.cfm?
 {
 	NSLog(@"new theme: %@", newTheme);
     [self.list addObject:newTheme];
-    // The XML parser calls addToEarthquakeList: each time it creates an earthquake object.
-    // The table needs to be reloaded to reflect the new content of the list.
+    // The XML parser calls addToThemeList: each time it creates a Theme object.
     [self reloadTable];
 }
 

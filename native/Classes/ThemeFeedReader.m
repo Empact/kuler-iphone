@@ -48,16 +48,16 @@ static NSUInteger parsedItemsCounter;
 {
     [super init];
 
-    [self.kulerElementNames initWithObjects:
-        @"link",
-        @"kuler:themeID",
-        @"kuler:themeTitle",
+    self.kulerElementNames = [NSArray arrayWithObjects:
+		@"link", 
+		@"kuler:themeID", 
+		@"kuler:themeTitle",
         @"kuler:authorID",
         @"kuler:authorLabel",
         @"kuler:themeDownloadCount",
         @"kuler:themeCreatedAt",
-        @"kuler:themeEditedAt"];
-
+        @"kuler:themeEditedAt", nil];
+	
     return self;
 }
 
@@ -98,7 +98,9 @@ static NSUInteger parsedItemsCounter;
 		NSLog(@"max themes reached.");
         [parser abortParsing];
     }
-
+	
+	NSLog(@"we found the element %@", elementName );
+	
     if ([elementName isEqualToString:@"item"]) {
 
         parsedItemsCounter++;

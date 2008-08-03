@@ -11,21 +11,23 @@
 @private
     NSString *_themeID;
     NSMutableArray *_swatches;
-    NSString *_author;
+    NSString *_authorId;
+    NSString *_authorLabel;
     NSString *_title;
     NSURL *_link;
-    NSUInteger _downloadCount;
+    NSInteger _downloadCount;
     NSString *_created;
     NSString *_edited;
 }
 
 @property (nonatomic, retain) NSString *themeID;
 @property (nonatomic, retain) NSMutableArray *swatches;
-@property (nonatomic, retain) NSString *author;
+@property (nonatomic, retain) NSString *authorId;
+@property (nonatomic, retain) NSString *authorLabel;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSURL *link;
-@property (nonatomic) NSUInteger downloadCount;
+@property (nonatomic) NSInteger downloadCount;
 @property (nonatomic, retain) NSString *created;
-@property (nonatomic, readonly) NSString  *edited;
+@property (nonatomic, retain) NSString  *edited;
 
 @end

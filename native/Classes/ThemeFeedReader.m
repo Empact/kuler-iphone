@@ -66,7 +66,7 @@ static NSUInteger parsedItemsCounter;
 }
 
 - (void)parseXMLFileAtURL:(NSURL *)URL parseError:(NSError **)error
-{	
+{
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];
     // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
     [parser setDelegate:self];
@@ -74,14 +74,14 @@ static NSUInteger parsedItemsCounter;
     [parser setShouldProcessNamespaces:YES];
     [parser setShouldReportNamespacePrefixes:NO];
     [parser setShouldResolveExternalEntities:NO];
-    
+
     [parser parse];
-    
+
     NSError *parseError = [parser parserError];
     if (parseError && error) {
         *error = parseError;
     }
-    
+
     [parser release];
 }
 
@@ -90,24 +90,24 @@ static NSUInteger parsedItemsCounter;
     if (qName) {
         elementName = qName;
     }
-	
+
     // If the number of parsed themes is greater than MAX_ELEMENTS, abort the parse.
     // Otherwise the application runs very slowly on the device.
     if (parsedItemsCounter >= MAX_THEMES) {
         [parser abortParsing];
     }
- 
+
     if ([elementName isEqualToString:@"kuler:themeItem"]) {
-        
+
         parsedItemsCounter++;
-        
+
         // An entry in the RSS feed represents an theme, so create an instance of it.
         self.currentObject = [[Theme alloc] init];
         // Add the new Theme object to the application's array of themes.
         [(id)[[UIApplication sharedApplication] delegate] performSelectorOnMainThread:@selector(addToThemeList:) withObject:self.currentObject waitUntilDone:YES];
         return;
     }
-	
+
     if ([elementName isEqualToString:@"link"]) {
         NSString *relAtt = [attributeDict valueForKey:@"rel"];
         if ([relAtt isEqualToString:@"alternate"]) {
@@ -119,7 +119,7 @@ static NSUInteger parsedItemsCounter;
         // The contents are collected in parser:foundCharacters:.
         self.contentOfCurrentProperty = [NSMutableString string];
     } else {
-        // The element isn't one that we care about, so set the property that holds the 
+        // The element isn't one that we care about, so set the property that holds the
         // character content of the current element to nil. That way, in the parser:foundCharacters:
         // callback, the string that the parser reports will be ignored.
         self.contentOfCurrentProperty = nil;
@@ -127,17 +127,17 @@ static NSUInteger parsedItemsCounter;
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{     
+{
     if (qName) {
         elementName = qName;
     }
-    
+
     if ([elementName isEqualToString:@"title"]) {
         self.currentObject.title = self.contentOfCurrentProperty;
-        
+
     } else if ([elementName isEqualToString:@"updated"]) {
         //self.currentObject.eventDateString = self.contentOfCurrentProperty;
-        
+
     } else if ([elementName isEqualToString:@"georss:point"]) {
         //self.currentObject.geoRSSPoint = self.contentOfCurrentProperty;
     }

@@ -10,8 +10,8 @@
 #import "Theme.h"
 
 @interface ThemeFeedReader : NSObject {
-	
-@private        
+
+@private
     Theme *_currentObject;
     NSMutableString *_contentOfCurrentProperty;
     NSArray *_kulerElementNames;

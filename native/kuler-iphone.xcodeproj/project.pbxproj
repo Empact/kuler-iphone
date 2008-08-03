@@ -18,6 +18,8 @@
 		7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */; };
 		7377AC810E454CA600AAF824 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7377AC800E454CA600AAF824 /* SystemConfiguration.framework */; };
 		8860019D0E4636EF006D3C1A /* Swatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8860019C0E4636EF006D3C1A /* Swatch.m */; };
+		886001F50E464E3E006D3C1A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886001F20E464E3E006D3C1A /* RootViewController.m */; };
+		886001F60E464E3E006D3C1A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 886001F40E464E3E006D3C1A /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		7377AC800E454CA600AAF824 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8860019B0E4636EF006D3C1A /* Swatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swatch.h; sourceTree = "<group>"; };
 		8860019C0E4636EF006D3C1A /* Swatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swatch.m; sourceTree = "<group>"; };
+		886001F10E464E3E006D3C1A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		886001F20E464E3E006D3C1A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		886001F30E464E3E006D3C1A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		886001F40E464E3E006D3C1A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				886001F10E464E3E006D3C1A /* RootViewController.h */,
+				886001F20E464E3E006D3C1A /* RootViewController.m */,
+				886001F30E464E3E006D3C1A /* TableViewCell.h */,
+				886001F40E464E3E006D3C1A /* TableViewCell.m */,
 				32CA4F630368D1EE00C91783 /* kuler_iphone_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -182,6 +192,8 @@
 				7377ABB10E4531E200AAF824 /* ThemeFeedReader.m in Sources */,
 				7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */,
 				8860019D0E4636EF006D3C1A /* Swatch.m in Sources */,
+				886001F50E464E3E006D3C1A /* RootViewController.m in Sources */,
+				886001F60E464E3E006D3C1A /* TableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

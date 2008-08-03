@@ -15,4 +15,5 @@
 	@synthesize channel2;
 	@synthesize channel3;
 	@synthesize channel4;
+	@synthesize displaySequence;
 @end

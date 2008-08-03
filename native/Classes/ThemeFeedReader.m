@@ -95,7 +95,7 @@ static NSUInteger parsedItemsCounter;
     // If the number of parsed themes is greater than MAX_ELEMENTS, abort the parse.
     // Otherwise the application runs very slowly on the device.
     if (parsedItemsCounter >= MAX_THEMES) {
-		NSLog("max themes reached.");
+		NSLog(@"max themes reached.");
         [parser abortParsing];
     }
 
@@ -154,8 +154,26 @@ static NSUInteger parsedItemsCounter;
     } else if ([elementName isEqualToString:@"kuler:themeEditedAt"]) {
         self.currentObject.edited = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuler:themeCreatedAt"]) {
-        self.currentObject.created = self.contentOfCurrentProperty;
+    } else if ([elementName isEqualToString:@"kuler:swatchHexColor"]) {
+        self.currentSwatch.hexColor = [self.contentOfCurrentProperty integerValue];
+		
+    } else if ([elementName isEqualToString:@"kuler:swatchColorMode"]) {
+        self.currentSwatch.colorMode = self.contentOfCurrentProperty;
+
+    } else if ([elementName isEqualToString:@"kuler:swatchChannel1"]) {
+        self.currentSwatch.channel1 = [self.contentOfCurrentProperty floatValue];
+		
+    } else if ([elementName isEqualToString:@"kuler:swatchChannel2"]) {
+        self.currentSwatch.channel2 = [self.contentOfCurrentProperty floatValue];
+		
+    } else if ([elementName isEqualToString:@"kuler:swatchChannel3"]) {
+        self.currentSwatch.channel3 = [self.contentOfCurrentProperty floatValue];
+		
+    } else if ([elementName isEqualToString:@"kuler:swatchChannel4"]) {
+        self.currentSwatch.channel4 = [self.contentOfCurrentProperty floatValue];
+		
+    } else if ([elementName isEqualToString:@"kuler:swatchIndex"]) {
+        self.currentSwatch.displaySequence = [self.contentOfCurrentProperty integerValue];
 		
     } else if ([elementName isEqualToString:@"link"]) {
         self.currentObject.link = [NSURL URLWithString: self.contentOfCurrentProperty];

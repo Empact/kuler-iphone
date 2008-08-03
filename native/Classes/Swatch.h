@@ -8,6 +8,7 @@
 
 @interface Swatch : NSObject {
 	int hexColor;
+	int displaySequence;
 	NSString *colorMode;
 	float channel1;
 	float channel2;
@@ -16,6 +17,7 @@
 }
 
 @property (nonatomic) int hexColor;
+@property (nonatomic) int displaySequence;
 @property (nonatomic, copy) NSString *colorMode;
 @property (nonatomic) float channel1;
 @property (nonatomic) float channel2;

@@ -14,13 +14,13 @@
 
 @private
     Theme *_currentObject;
-	NSMutableArray *_currentSwatch;
+	Swatch *_currentSwatch;
     NSMutableString *_contentOfCurrentProperty;
     NSArray *_kulerElementNames;
 }
 
 @property (nonatomic, retain) Theme *currentObject;
-@property (nonatomic, retain) NSMutableArray *currentSwatch;
+@property (nonatomic, retain) Swatch *currentSwatch;
 @property (nonatomic, retain) NSMutableString *contentOfCurrentProperty;
 @property (nonatomic, retain) NSArray *kulerElementNames;
 

@@ -2,35 +2,32 @@
 //  ThemeFeedReader.m
 //  Kuler Experiment
 //
-// <kuler:themeItem>
-//<kuler:themeID>230218</kuler:themeID>
-//<kuler:themeTitle>cyr</kuler:themeTitle>
-//<kuler:themeImage>http://kuler.adobe.com/kuler/themeImages/theme_230218.png</kuler:themeImage>
-//<kuler:themeAuthor>
-//<kuler:authorID>124541</kuler:authorID>
-//<kuler:authorLabel>sidart2</kuler:authorLabel>
-//</kuler:themeAuthor>
-//<kuler:themeTags/>
-//<kuler:themeRating>0</kuler:themeRating>
-//<kuler:themeDownloadCount>1</kuler:themeDownloadCount>
-//<kuler:themeCreatedAt>20080802</kuler:themeCreatedAt>
-//<kuler:themeEditedAt>20080802</kuler:themeEditedAt>
-//<kuler:themeSwatches>
-//<kuler:swatch>
-//<kuler:swatchHexColor>353131</kuler:swatchHexColor>
-//<kuler:swatchColorMode>rgb</kuler:swatchColorMode>
-//<kuler:swatchChannel1>0.207843</kuler:swatchChannel1>
-//<kuler:swatchChannel2>0.192157</kuler:swatchChannel2>
-//<kuler:swatchChannel3>0.192157</kuler:swatchChannel3>
-//<kuler:swatchChannel4>0.0</kuler:swatchChannel4>
-//<kuler:swatchIndex>0</kuler:swatchIndex>
-//</kuler:swatch>
-//<kuler:swatch>... 4 more
-//</kuler:themeSwatches>
+//<kuler:themeItem>
+//  <kuler:themeID>230218</kuler:themeID>
+//  <kuler:themeTitle>cyr</kuler:themeTitle>
+//  <kuler:themeImage>http://kuler.adobe.com/kuler/themeImages/theme_230218.png</kuler:themeImage>
+//  <kuler:themeAuthor>
+//    <kuler:authorID>124541</kuler:authorID>
+//    <kuler:authorLabel>sidart2</kuler:authorLabel>
+//  </kuler:themeAuthor>
+//  <kuler:themeTags/>
+//  <kuler:themeRating>0</kuler:themeRating>
+//  <kuler:themeDownloadCount>1</kuler:themeDownloadCount>
+//  <kuler:themeCreatedAt>20080802</kuler:themeCreatedAt>
+//  <kuler:themeEditedAt>20080802</kuler:themeEditedAt>
+//  <kuler:themeSwatches>
+//    <kuler:swatch>
+//      <kuler:swatchHexColor>353131</kuler:swatchHexColor>
+//      <kuler:swatchColorMode>rgb</kuler:swatchColorMode>
+//      <kuler:swatchChannel1>0.207843</kuler:swatchChannel1>
+//      <kuler:swatchChannel2>0.192157</kuler:swatchChannel2>
+//      <kuler:swatchChannel3>0.192157</kuler:swatchChannel3>
+//      <kuler:swatchChannel4>0.0</kuler:swatchChannel4>
+//      <kuler:swatchIndex>0</kuler:swatchIndex>
+//    </kuler:swatch>
+//    <kuler:swatch>... 4 more
+//  </kuler:themeSwatches>
 //</kuler:themeItem>
-//  Created by Brian Rice on 8/2/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
-//
 
 #import "ThemeFeedReader.h"
 

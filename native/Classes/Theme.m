@@ -22,5 +22,12 @@
 @synthesize edited = _edited;
 
 
+-(NSString *)description{
+	NSString *result;
+	result = [[NSString alloc] initWithFormat:@"title: %@", _title];
+	
+	return result;
+}
+
 
 @end

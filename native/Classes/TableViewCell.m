@@ -58,7 +58,8 @@ static UIImage *themeImage = nil;
     [_theme release];
     _theme = newTheme;
     
-    self.themeNameLabel.text = newTheme.title;
+    //self.themeNameLabel.text = newTheme.title;
+	self.themeNameLabel.text = @"Theme Title";
     self.themeImageView.image = themeImage;
     
     [self setNeedsDisplay];
@@ -86,7 +87,7 @@ static UIImage *themeImage = nil;
         CGFloat boundsX = contentRect.origin.x;
 		CGRect frame;
         
-        // Place the location label.
+        // Place the title label.
 		frame = CGRectMake(boundsX + LEFT_COLUMN_OFFSET, UPPER_ROW_TOP, LEFT_COLUMN_WIDTH, 20);
 		self.themeNameLabel.frame = frame;
         
@@ -94,7 +95,7 @@ static UIImage *themeImage = nil;
         UIImageView *imageView = self.themeImageView;
         frame = [imageView frame];
 		frame.origin.x = boundsX + MIDDLE_COLUMN_OFFSET;
-		frame.origin.y = 0;
+		frame.origin.y = UPPER_ROW_TOP;
  		imageView.frame = frame;
         
 

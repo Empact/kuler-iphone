@@ -13,7 +13,8 @@
 
 @synthesize themeID = _themeID;
 @synthesize swatches = _swatches;
-@synthesize author = _author;
+@synthesize authorId = _authorId;
+@synthesize authorLabel = _authorLabel;
 @synthesize title = _title;
 @synthesize link = _link;
 @synthesize downloadCount = _downloadCount;

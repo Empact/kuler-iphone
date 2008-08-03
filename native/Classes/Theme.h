@@ -13,8 +13,8 @@
     NSMutableArray *_swatches;
     NSString *_author;
     NSString *_title;
-    NSString *_link;
-    NSString *_downloadCount;
+    NSURL *_link;
+    NSUInteger _downloadCount;
     NSString *_created;
     NSString *_edited;
 }
@@ -23,8 +23,8 @@
 @property (nonatomic, retain) NSMutableArray *swatches;
 @property (nonatomic, retain) NSString *author;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *link;
-@property (nonatomic, retain) NSString *downloadCount;
+@property (nonatomic, retain) NSURL *link;
+@property (nonatomic) NSUInteger downloadCount;
 @property (nonatomic, retain) NSString *created;
 @property (nonatomic, readonly) NSString  *edited;
 

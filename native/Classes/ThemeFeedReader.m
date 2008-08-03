@@ -72,7 +72,7 @@ static NSUInteger parsedThemesCounter;
         if ([relAtt isEqualToString:@"alternate"]) {
             NSString *link = [attributeDict valueForKey:@"href"];
             link = [NSString stringWithFormat:@"http://earthquake.usgs.gov/%@", link];
-            self.currentThemeObject.link = link;
+            self.currentThemeObject.link = [NSURL URLWithString: link];
         }
     } else if ([elementName isEqualToString:@"title"]) {
         // Create a mutable string to hold the contents of the 'title' element.

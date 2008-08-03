@@ -19,7 +19,7 @@
 
 @property (nonatomic, retain) Theme *currentObject;
 @property (nonatomic, retain) NSMutableString *contentOfCurrentProperty;
-@property (nonatomic, retain) NSMutableArray *kulerElementNames;
+@property (nonatomic, retain) NSArray *kulerElementNames;
 
 - (void)parseXMLFileAtURL:(NSURL *)URL parseError:(NSError **)error;
 

@@ -10,11 +10,14 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Theme.h"
 #import "ThemeFeedReader.h"
+#import "RootViewController.h"
 #import <Foundation/Foundation.h>
 
 @implementation kuler_iphoneAppDelegate
 
 @synthesize window;
+@synthesize navigationController;
+@synthesize list;
 
 static NSString *feedURLString = @"http://kuler.adobe.com/kuler/API/rss/get.cfm?listtype=rating";
 
@@ -55,6 +58,20 @@ static NSString *feedURLString = @"http://kuler.adobe.com/kuler/API/rss/get.cfm?
 }
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {	
+	
+	
+	self.list = [NSMutableArray array];
+	
+	// Create the navigation and view controllers
+	RootViewController *rootViewController = [[RootViewController alloc] initWithStyle:UITableViewStylePlain];
+	UINavigationController *aNavigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+	self.navigationController = aNavigationController;
+	[aNavigationController release];
+	[rootViewController release];
+	
+	// Configure and show the window
+	[window addSubview:[navigationController view]];
+	
 	// Override point for customization after app launch
 	if ([self isDataSourceAvailable] == NO) {
         return;
@@ -63,6 +80,34 @@ static NSString *feedURLString = @"http://kuler.adobe.com/kuler/API/rss/get.cfm?
     // Spawn a thread to fetch the theme data so that the UI is not blocked while the 
     // application parses the XML file.
     [NSThread detachNewThreadSelector:@selector(getThemeData) toTarget:self withObject:nil];
+}
+
+- (void)reloadTable
+{
+    [[(RootViewController *)[self.navigationController topViewController] tableView] reloadData];
+}
+
+- (void)addToThemeList:(Theme *)newTheme
+{
+	NSLog(@"new theme: %@", newTheme);
+    [self.list addObject:newTheme];
+    // The XML parser calls addToEarthquakeList: each time it creates an earthquake object.
+    // The table needs to be reloaded to reflect the new content of the list.
+    [self reloadTable];
+}
+
+- (NSUInteger)countOfList {
+	NSLog(@"list count: %d", [list count]);
+	return [list count];
+}
+
+- (id)objectInListAtIndex:(NSUInteger)theIndex {
+	//NSLog(@"object at index %d: %@", [list objectAtIndex:theIndex]);
+	return [list objectAtIndex:theIndex];
+}
+
+- (void)getList:(id *)objsPtr range:(NSRange)range {
+	[list getObjects:objsPtr range:range];
 }
 
 // Need to make this a render method on an appropriate ThemeSwatchesFullView class

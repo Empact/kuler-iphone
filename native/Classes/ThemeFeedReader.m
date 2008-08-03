@@ -95,6 +95,7 @@ static NSUInteger parsedItemsCounter;
     // If the number of parsed themes is greater than MAX_ELEMENTS, abort the parse.
     // Otherwise the application runs very slowly on the device.
     if (parsedItemsCounter >= MAX_THEMES) {
+		NSLog("max themes reached.");
         [parser abortParsing];
     }
 
@@ -133,6 +134,7 @@ static NSUInteger parsedItemsCounter;
 	
     if ([elementName isEqualToString:@"kuler:themeTitle"]) {
         self.currentObject.title = self.contentOfCurrentProperty;
+		NSLog(@"we found the title element");
 
     } else if ([elementName isEqualToString:@"kuler:themeID"]) {
         self.currentObject.themeID = self.contentOfCurrentProperty;

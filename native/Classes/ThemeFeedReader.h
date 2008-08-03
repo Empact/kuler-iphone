@@ -6,18 +6,20 @@
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-//#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 #import "Theme.h"
 
 @interface ThemeFeedReader : NSObject {
-	
-@private        
-    Theme *_currentThemeObject;
-    NSMutableString *_contentOfCurrentThemeProperty;
+
+@private
+    Theme *_currentObject;
+    NSMutableString *_contentOfCurrentProperty;
+    NSArray *_kulerElementNames;
 }
 
-@property (nonatomic, retain) Theme *currentThemeObject;
-@property (nonatomic, retain) NSMutableString *contentOfCurrentThemeProperty;
+@property (nonatomic, retain) Theme *currentObject;
+@property (nonatomic, retain) NSMutableString *contentOfCurrentProperty;
+@property (nonatomic, retain) NSArray *kulerElementNames;
 
 - (void)parseXMLFileAtURL:(NSURL *)URL parseError:(NSError **)error;
 

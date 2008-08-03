@@ -2,6 +2,32 @@
 //  ThemeFeedReader.m
 //  Kuler Experiment
 //
+// <kuler:themeItem>
+//<kuler:themeID>230218</kuler:themeID>
+//<kuler:themeTitle>cyr</kuler:themeTitle>
+//<kuler:themeImage>http://kuler.adobe.com/kuler/themeImages/theme_230218.png</kuler:themeImage>
+//<kuler:themeAuthor>
+//<kuler:authorID>124541</kuler:authorID>
+//<kuler:authorLabel>sidart2</kuler:authorLabel>
+//</kuler:themeAuthor>
+//<kuler:themeTags/>
+//<kuler:themeRating>0</kuler:themeRating>
+//<kuler:themeDownloadCount>1</kuler:themeDownloadCount>
+//<kuler:themeCreatedAt>20080802</kuler:themeCreatedAt>
+//<kuler:themeEditedAt>20080802</kuler:themeEditedAt>
+//<kuler:themeSwatches>
+//<kuler:swatch>
+//<kuler:swatchHexColor>353131</kuler:swatchHexColor>
+//<kuler:swatchColorMode>rgb</kuler:swatchColorMode>
+//<kuler:swatchChannel1>0.207843</kuler:swatchChannel1>
+//<kuler:swatchChannel2>0.192157</kuler:swatchChannel2>
+//<kuler:swatchChannel3>0.192157</kuler:swatchChannel3>
+//<kuler:swatchChannel4>0.0</kuler:swatchChannel4>
+//<kuler:swatchIndex>0</kuler:swatchIndex>
+//</kuler:swatch>
+//<kuler:swatch>... 4 more
+//</kuler:themeSwatches>
+//</kuler:themeItem>
 //  Created by Brian Rice on 8/2/08.
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
@@ -11,17 +37,33 @@
 
 @implementation ThemeFeedReader
 
-static NSUInteger parsedThemesCounter;
+static NSUInteger parsedItemsCounter;
 
-@synthesize currentThemeObject = _currentThemeObject;
-@synthesize contentOfCurrentThemeProperty = _contentOfCurrentThemeProperty;
+@synthesize currentObject = _currentObject;
+@synthesize contentOfCurrentProperty = _contentOfCurrentProperty;
 
 // Limit the number of parsed Themes to 50. Otherwise the application runs very slowly on the device.
 #define MAX_THEMES 50
 
+- (id)init
+{
+	[super init];
+	
+    [self.kulerElementNames addObject: @"kuler:themeID"];
+	[self.kulerElementNames addObject: @"kuler:themeTitle"];
+    [self.kulerElementNames addObject: @"kuler:authorID"];	
+    [self.kulerElementNames addObject: @"kuler:authorLabel"];	
+    [self.kulerElementNames addObject: @"kuler:themeRating"];	
+    [self.kulerElementNames addObject: @"kuler:themeDownloadCount"];	
+    [self.kulerElementNames addObject: @"kuler:themeCreatedAt"];	
+    [self.kulerElementNames addObject: @"kuler:themeEditedAt"];	
+
+	return self;
+}
+
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
-    parsedThemesCounter = 0;
+    parsedItemsCounter = 0;
 }
 
 - (void)parseXMLFileAtURL:(NSURL *)URL parseError:(NSError **)error
@@ -30,7 +72,7 @@ static NSUInteger parsedThemesCounter;
     // Set self as the delegate of the parser so that it will receive the parser delegate methods callbacks.
     [parser setDelegate:self];
     // Depending on the XML document you're parsing, you may want to enable these features of NSXMLParser.
-    [parser setShouldProcessNamespaces:NO];
+    [parser setShouldProcessNamespaces:YES];
     [parser setShouldReportNamespacePrefixes:NO];
     [parser setShouldResolveExternalEntities:NO];
     
@@ -52,18 +94,18 @@ static NSUInteger parsedThemesCounter;
 	
     // If the number of parsed themes is greater than MAX_ELEMENTS, abort the parse.
     // Otherwise the application runs very slowly on the device.
-    if (parsedThemesCounter >= MAX_THEMES) {
+    if (parsedItemsCounter >= MAX_THEMES) {
         [parser abortParsing];
     }
-    
-    if ([elementName isEqualToString:@"entry"]) {
+ 
+    if ([elementName isEqualToString:@"kuler:themeItem"]) {
         
-        parsedThemesCounter++;
+        parsedItemsCounter++;
         
         // An entry in the RSS feed represents an theme, so create an instance of it.
-        self.currentThemeObject = [[Theme alloc] init];
+        self.currentObject = [[Theme alloc] init];
         // Add the new Theme object to the application's array of themes.
-        [(id)[[UIApplication sharedApplication] delegate] performSelectorOnMainThread:@selector(addToThemeList:) withObject:self.currentThemeObject waitUntilDone:YES];
+        [(id)[[UIApplication sharedApplication] delegate] performSelectorOnMainThread:@selector(addToThemeList:) withObject:self.currentObject waitUntilDone:YES];
         return;
     }
 	
@@ -72,27 +114,16 @@ static NSUInteger parsedThemesCounter;
         if ([relAtt isEqualToString:@"alternate"]) {
             NSString *link = [attributeDict valueForKey:@"href"];
             link = [NSString stringWithFormat:@"http://earthquake.usgs.gov/%@", link];
-            self.currentThemeObject.link = [NSURL URLWithString: link];
+            self.currentObject.link = link;
         }
-    } else if ([elementName isEqualToString:@"title"]) {
-        // Create a mutable string to hold the contents of the 'title' element.
+    } else if ( [self.kulerElementNames indexOfObject:elementName] == NSNotFound ) {
         // The contents are collected in parser:foundCharacters:.
-        self.contentOfCurrentThemeProperty = [NSMutableString string];
-        
-    } else if ([elementName isEqualToString:@"updated"]) {
-        // Create a mutable string to hold the contents of the 'updated' element.
-        // The contents are collected in parser:foundCharacters:.
-        self.contentOfCurrentThemeProperty = [NSMutableString string];
-        
-    } else if ([elementName isEqualToString:@"georss:point"]) {
-        // Create a mutable string to hold the contents of the 'georss:point' element.
-        // The contents are collected in parser:foundCharacters:.
-        self.contentOfCurrentThemeProperty = [NSMutableString string];
+        self.contentOfCurrentProperty = [NSMutableString string];
     } else {
         // The element isn't one that we care about, so set the property that holds the 
         // character content of the current element to nil. That way, in the parser:foundCharacters:
         // callback, the string that the parser reports will be ignored.
-        self.contentOfCurrentThemeProperty = nil;
+        self.contentOfCurrentProperty = nil;
     }
 }
 
@@ -103,22 +134,22 @@ static NSUInteger parsedThemesCounter;
     }
     
     if ([elementName isEqualToString:@"title"]) {
-        self.currentThemeObject.title = self.contentOfCurrentThemeProperty;
+        self.currentObject.title = self.contentOfCurrentProperty;
         
     } else if ([elementName isEqualToString:@"updated"]) {
-        //self.currentThemeObject.eventDateString = self.contentOfCurrentThemeProperty;
+        //self.currentObject.eventDateString = self.contentOfCurrentProperty;
         
     } else if ([elementName isEqualToString:@"georss:point"]) {
-        //self.currentThemeObject.geoRSSPoint = self.contentOfCurrentThemeProperty;
+        //self.currentObject.geoRSSPoint = self.contentOfCurrentProperty;
     }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    if (self.contentOfCurrentThemeProperty) {
+    if (self.contentOfCurrentProperty) {
         // If the current element is one whose content we care about, append 'string'
         // to the property that holds the content of the current element.
-        [self.contentOfCurrentThemeProperty appendString:string];
+        [self.contentOfCurrentProperty appendString:string];
     }
 }
 

@@ -97,7 +97,7 @@ static NSUInteger parsedItemsCounter;
         [parser abortParsing];
     }
 
-    if ([elementName isEqualToString:@"kuler:themeItem"]) {
+    if ([elementName isEqualToString:@"item"]) {
 
         parsedItemsCounter++;
 
@@ -108,14 +108,7 @@ static NSUInteger parsedItemsCounter;
         return;
     }
 
-    if ([elementName isEqualToString:@"link"]) {
-        NSString *relAtt = [attributeDict valueForKey:@"rel"];
-        if ([relAtt isEqualToString:@"alternate"]) {
-            NSString *link = [attributeDict valueForKey:@"href"];
-            link = [NSString stringWithFormat:@"http://earthquake.usgs.gov/%@", link];
-            self.currentObject.link = link;
-        }
-    } else if ( [self.kulerElementNames containsObject:elementName] ) {
+	if ( [self.kulerElementNames containsObject:elementName] ) {
         // The contents are collected in parser:foundCharacters:.
         self.contentOfCurrentProperty = [NSMutableString string];
     } else {
@@ -155,7 +148,10 @@ static NSUInteger parsedItemsCounter;
 
     } else if ([elementName isEqualToString:@"kuller:themeCreatedAt"]) {
         self.currentObject.created = self.contentOfCurrentProperty;
-    }
+		
+    } else if ([elementName isEqualToString:@"link"]) {
+        self.currentObject.link = self.contentOfCurrentProperty;
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string

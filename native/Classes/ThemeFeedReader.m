@@ -125,6 +125,8 @@ static NSUInteger parsedItemsCounter;
         elementName = qName;
     }
 
+	// TODO: Process swatches. Convert the string values to NSColors.
+	
     if ([elementName isEqualToString:@"kuller:themeTitle"]) {
         self.currentObject.title = self.contentOfCurrentProperty;
 

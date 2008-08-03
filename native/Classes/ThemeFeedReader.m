@@ -41,6 +41,7 @@ static NSUInteger parsedItemsCounter;
 
 @synthesize currentObject = _currentObject;
 @synthesize contentOfCurrentProperty = _contentOfCurrentProperty;
+@synthesize kulerElementNames = _kulerElementNames;
 
 // Limit the number of parsed Themes to 50. Otherwise the application runs very slowly on the device.
 #define MAX_THEMES 50

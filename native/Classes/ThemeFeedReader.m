@@ -50,6 +50,8 @@ static NSUInteger parsedItemsCounter;
 {
 	[super init];
 	
+	
+    [self.kulerElementNames addObject: @"link"];
     [self.kulerElementNames addObject: @"kuler:themeID"];
 	[self.kulerElementNames addObject: @"kuler:themeTitle"];
     [self.kulerElementNames addObject: @"kuler:authorID"];	
@@ -117,7 +119,7 @@ static NSUInteger parsedItemsCounter;
             link = [NSString stringWithFormat:@"http://earthquake.usgs.gov/%@", link];
             self.currentObject.link = link;
         }
-    } else if ( [self.kulerElementNames indexOfObject:elementName] == NSNotFound ) {
+    } else if ( [self.kulerElementNames containsObject:elementName] ) {
         // The contents are collected in parser:foundCharacters:.
         self.contentOfCurrentProperty = [NSMutableString string];
     } else {

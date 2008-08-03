@@ -48,20 +48,19 @@ static NSUInteger parsedItemsCounter;
 
 - (id)init
 {
-	[super init];
-	
-	
-    [self.kulerElementNames addObject: @"link"];
-    [self.kulerElementNames addObject: @"kuler:themeID"];
-	[self.kulerElementNames addObject: @"kuler:themeTitle"];
-    [self.kulerElementNames addObject: @"kuler:authorID"];	
-    [self.kulerElementNames addObject: @"kuler:authorLabel"];	
-    [self.kulerElementNames addObject: @"kuler:themeRating"];	
-    [self.kulerElementNames addObject: @"kuler:themeDownloadCount"];	
-    [self.kulerElementNames addObject: @"kuler:themeCreatedAt"];	
-    [self.kulerElementNames addObject: @"kuler:themeEditedAt"];	
+    [super init];
 
-	return self;
+    [self.kulerElementNames initWithObjects:
+        @"link",
+        @"kuler:themeID",
+        @"kuler:themeTitle",
+        @"kuler:authorID",
+        @"kuler:authorLabel",
+        @"kuler:themeDownloadCount",
+        @"kuler:themeCreatedAt",
+        @"kuler:themeEditedAt"];
+
+    return self;
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser

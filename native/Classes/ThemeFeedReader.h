@@ -14,7 +14,7 @@
 @private        
     Theme *_currentObject;
     NSMutableString *_contentOfCurrentProperty;
-	NSMutableArray *_kulerElementNames;
+    NSArray *_kulerElementNames;
 }
 
 @property (nonatomic, retain) Theme *currentObject;

@@ -17,7 +17,7 @@
 		7377ABB10E4531E200AAF824 /* ThemeFeedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABAF0E4531E200AAF824 /* ThemeFeedReader.m */; };
 		7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */; };
 		7377AC810E454CA600AAF824 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7377AC800E454CA600AAF824 /* SystemConfiguration.framework */; };
-		8860015A0E4625F1006D3C1A /* foo.m in Sources */ = {isa = PBXBuildFile; fileRef = 886001590E4625F1006D3C1A /* foo.m */; };
+		8860019D0E4636EF006D3C1A /* Swatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8860019C0E4636EF006D3C1A /* Swatch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		7377ABE20E453C3B00AAF824 /* KulerGetFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KulerGetFeed.h; sourceTree = "<group>"; };
 		7377ABE30E453C3B00AAF824 /* KulerGetFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KulerGetFeed.m; sourceTree = "<group>"; };
 		7377AC800E454CA600AAF824 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		886001580E4625F1006D3C1A /* foo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foo.h; sourceTree = "<group>"; };
-		886001590E4625F1006D3C1A /* foo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foo.m; sourceTree = "<group>"; };
+		8860019B0E4636EF006D3C1A /* Swatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swatch.h; sourceTree = "<group>"; };
+		8860019C0E4636EF006D3C1A /* Swatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swatch.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,8 +68,8 @@
 				7377ABAF0E4531E200AAF824 /* ThemeFeedReader.m */,
 				1D3623240D0F684500981E51 /* kuler_iphoneAppDelegate.h */,
 				1D3623250D0F684500981E51 /* kuler_iphoneAppDelegate.m */,
-				886001580E4625F1006D3C1A /* foo.h */,
-				886001590E4625F1006D3C1A /* foo.m */,
+				8860019B0E4636EF006D3C1A /* Swatch.h */,
+				8860019C0E4636EF006D3C1A /* Swatch.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 				7377ABB00E4531E200AAF824 /* Theme.m in Sources */,
 				7377ABB10E4531E200AAF824 /* ThemeFeedReader.m in Sources */,
 				7377ABE40E453C3B00AAF824 /* KulerGetFeed.m in Sources */,
-				8860015A0E4625F1006D3C1A /* foo.m in Sources */,
+				8860019D0E4636EF006D3C1A /* Swatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

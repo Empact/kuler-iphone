@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "Theme.h"
+#import "Swatch.h"
 
 @interface ThemeFeedReader : NSObject {
 
 @private
     Theme *_currentObject;
+	NSMutableArray *_currentSwatch;
     NSMutableString *_contentOfCurrentProperty;
     NSArray *_kulerElementNames;
 }
 
 @property (nonatomic, retain) Theme *currentObject;
+@property (nonatomic, retain) NSMutableArray *currentSwatch;
 @property (nonatomic, retain) NSMutableString *contentOfCurrentProperty;
 @property (nonatomic, retain) NSArray *kulerElementNames;
 

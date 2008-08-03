@@ -37,6 +37,7 @@
 static NSUInteger parsedItemsCounter;
 
 @synthesize currentObject = _currentObject;
+@synthesize currentSwatch = _currentSwatch;
 @synthesize contentOfCurrentProperty = _contentOfCurrentProperty;
 @synthesize kulerElementNames = _kulerElementNames;
 
@@ -105,10 +106,13 @@ static NSUInteger parsedItemsCounter;
         self.currentObject = [[Theme alloc] init];
         // Add the new Theme object to the application's array of themes.
         [(id)[[UIApplication sharedApplication] delegate] performSelectorOnMainThread:@selector(addToThemeList:) withObject:self.currentObject waitUntilDone:YES];
-        return;
-    }
+		
+    } else if ([elementName isEqualToString:@"kuler:swatch"]) {
+        self.currentSwatch = [[Swatch alloc] init];
+        // Add the new Swatch object to the Theme's array of swatches.
+		[self.currentObject.swatches addObject: self.currentSwatch];
 
-	if ( [self.kulerElementNames containsObject:elementName] ) {
+	} else if ( [self.kulerElementNames containsObject:elementName] ) {
         // The contents are collected in parser:foundCharacters:.
         self.contentOfCurrentProperty = [NSMutableString string];
     } else {
@@ -127,32 +131,32 @@ static NSUInteger parsedItemsCounter;
 
 	// TODO: Process swatches. Convert the string values to NSColors.
 	
-    if ([elementName isEqualToString:@"kuller:themeTitle"]) {
+    if ([elementName isEqualToString:@"kuler:themeTitle"]) {
         self.currentObject.title = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:themeID"]) {
+    } else if ([elementName isEqualToString:@"kuler:themeID"]) {
         self.currentObject.themeID = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:authorID"]) {
+    } else if ([elementName isEqualToString:@"kuler:authorID"]) {
         self.currentObject.authorId = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:authorLabel"]) {
+    } else if ([elementName isEqualToString:@"kuler:authorLabel"]) {
         self.currentObject.authorLabel = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:themeDownloadCount"]) {
+    } else if ([elementName isEqualToString:@"kuler:themeDownloadCount"]) {
         self.currentObject.downloadCount = [self.contentOfCurrentProperty integerValue];
 
-    } else if ([elementName isEqualToString:@"kuller:authorLabel"]) {
+    } else if ([elementName isEqualToString:@"kuler:authorLabel"]) {
         self.currentObject.authorLabel = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:themeEditedAt"]) {
+    } else if ([elementName isEqualToString:@"kuler:themeEditedAt"]) {
         self.currentObject.edited = self.contentOfCurrentProperty;
 
-    } else if ([elementName isEqualToString:@"kuller:themeCreatedAt"]) {
+    } else if ([elementName isEqualToString:@"kuler:themeCreatedAt"]) {
         self.currentObject.created = self.contentOfCurrentProperty;
 		
     } else if ([elementName isEqualToString:@"link"]) {
-        self.currentObject.link = self.contentOfCurrentProperty;
+        self.currentObject.link = [NSURL URLWithString: self.contentOfCurrentProperty];
 	}
 }
 
